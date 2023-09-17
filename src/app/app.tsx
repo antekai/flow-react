@@ -1,8 +1,15 @@
+import { Normalize } from "styled-normalize";
+import { Workflow } from "../pages/workflow";
+import theme, { GlobalStyle } from "./theme";
+import { ThemeProvider } from "styled-components";
+
 const App = () => {
   return (
-    <div>
-      <h1>Flow react</h1>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Normalize />
+      <Workflow />
+    </ThemeProvider>
   );
 };
 

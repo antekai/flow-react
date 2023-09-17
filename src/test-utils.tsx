@@ -1,11 +1,13 @@
 import { RenderHookResult, render, renderHook } from "@testing-library/react";
+import { ThemeProvider } from "styled-components";
+import theme from "./app/theme";
 
 interface ProvidersForTestsProps {
   children: JSX.Element;
 }
 
 export const ProvidersForTests = ({ children }: ProvidersForTestsProps) => {
-  return <div>{children}</div>;
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 
 const customRender = (ui: JSX.Element, options?: Record<string, unknown>) =>
