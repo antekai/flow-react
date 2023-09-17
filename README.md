@@ -1,27 +1,48 @@
-# React + TypeScript + Vite
+# Flow react
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+View and manage workflows
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Installation](#installation)
+- [Description](#description)
+- [Development](#development)
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1)Clone the repository to your local machine and install required dependencies
 
-- Configure the top-level `parserOptions` property like this:
+> ```shell
+> git clone
+> cd flow-react
+> yarn install
+> ```
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Description
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+This is a a react single page application that allows users to view and manage workflows.
+
+Features:
+
+- View workflows with zoom in/out
+- Search and display nodes
+- Add nodes and connections to the workflow
+
+Technologies:
+
+- Development server/tooling: vite
+- Styles: styled-components, ant-design
+- Testing: eslint, vitest, @testing-library/react, playwright
+- CI: github actions
+- Hosting: S3 bucket (Amazon Web Services)
+
+## Development
+
+> ```shell
+> yarn start # local development
+> yarn lint # linting add --fix flag for automatic fixes
+> yarn test # run tests
+> yarn e2e # run e2e tests
+> yarn build # build app at folder /dist
+> yarn preview # preview locally build files
+> ```
