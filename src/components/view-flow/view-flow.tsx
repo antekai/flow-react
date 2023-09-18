@@ -46,8 +46,6 @@ const ViewFlow = () => {
     [setEdges]
   );
 
-  console.log(nodes[0]);
-
   return (
     <StyledViewFlow>
       <ReactFlow
