@@ -1,10 +1,11 @@
+import { SearchNodes } from "../../components/search-nodes";
 import { ViewFlow } from "../../components/view-flow";
-import { StyledPanel, StyledWorkflow } from "./workflow.styles";
+import { StyledWorkflow } from "./workflow.styles";
 
 const Workflow = () => {
   return (
     <StyledWorkflow>
-      <StyledPanel>panel</StyledPanel>
+      <SearchNodes />
 
       <ViewFlow />
     </StyledWorkflow>
