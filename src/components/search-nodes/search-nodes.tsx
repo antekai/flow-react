@@ -1,4 +1,4 @@
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { StyledSelect } from "./search-nodes.styles";
 import { MultiValue } from "react-select";
 import nodeData from "../../mocks/node-data";
@@ -15,11 +15,18 @@ const SearchNodes = () => {
     return { value: key, label: value.label };
   });
   const value = nodeOptions.filter(({ value }) => searchNodes?.includes(value));
+  const navigate = useNavigate();
 
   const handleChange = (selectedOptions: MultiValue<Option>): void => {
+    if (searchParams.has("searchNodes") && selectedOptions.length === 0) {
+      navigate("/");
+      return;
+    }
+
     const optionValue = JSON.stringify(
       selectedOptions?.map((option: Option) => option.value)
     );
+
     setSearchParams({ searchNodes: optionValue });
   };
 
