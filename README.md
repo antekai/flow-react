@@ -2,6 +2,8 @@
 
 View and manage workflows
 
+![Image](/flow-preview.jpg "preview")
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -25,14 +27,14 @@ This is a a react single page application that allows users to view and manage w
 Features:
 
 - View workflows with zoom in/out
-- Search and display nodes
-- Add nodes and connections to the workflow
+- Search and add or remove nodes by input component
+- Move and remove nodes and nodes-connections at the workflow panel
 
 Technologies:
 
 - Development server/tooling: vite
-- Styles: styled-components, ant-design
-- Testing: eslint, vitest, @testing-library/react, playwright
+- Styles: styled-components
+- Testing: eslint, vitest, @testing-library/react
 - CI: github actions
 - Hosting: S3 bucket (Amazon Web Services)
 
@@ -42,7 +44,6 @@ Technologies:
 > yarn start # local development
 > yarn lint # linting add --fix flag for automatic fixes
 > yarn test # run tests
-> yarn e2e # run e2e tests
 > yarn build # build app at folder /dist
 > yarn preview # preview locally build files
 > ```

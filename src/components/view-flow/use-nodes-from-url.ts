@@ -37,6 +37,7 @@ const useNodesFromUrl = (): [Node[], OnNodesChange] => {
 
       return [...existingNodes, ...newNodes];
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nodeParams]);
 
   return [nodes, onNodesChange];
