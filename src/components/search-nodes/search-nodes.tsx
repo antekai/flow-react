@@ -1,6 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import { StyledSelect } from "./search-nodes.styles";
 import { MultiValue } from "react-select";
+import nodeData from "../../mocks/node-data";
 
 interface Option {
   value: string;
@@ -8,15 +9,12 @@ interface Option {
 }
 
 const SearchNodes = () => {
-  const options = [
-    { value: "one", label: "One" },
-    { value: "two", label: "Two" },
-    { value: "three", label: "Three" },
-  ];
-
   const [searchParams, setSearchParams] = useSearchParams();
   const searchNodes = searchParams.get("searchNodes");
-  const value = options.filter(({ value }) => searchNodes?.includes(value));
+  const nodeOptions: Option[] = Object.entries(nodeData).map(([key, value]) => {
+    return { value: key, label: value.label };
+  });
+  const value = nodeOptions.filter(({ value }) => searchNodes?.includes(value));
 
   const handleChange = (selectedOptions: MultiValue<Option>): void => {
     const optionValue = JSON.stringify(
@@ -28,7 +26,7 @@ const SearchNodes = () => {
   return (
     <StyledSelect
       name="search-nodes"
-      options={options}
+      options={nodeOptions}
       isClearable
       isMulti
       isSearchable

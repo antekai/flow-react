@@ -1,46 +1,19 @@
 import { useCallback } from "react";
 import ReactFlow, {
-  Node,
   addEdge,
   Background,
   Edge,
   Connection,
-  useNodesState,
   useEdgesState,
+  Controls,
 } from "reactflow";
-
 import "reactflow/dist/style.css";
 import { StyledViewFlow } from "./view-flow.styles";
-
-const initialNodes: Node[] = [
-  {
-    id: "1",
-    type: "input",
-    data: { label: "Node 1" },
-    position: { x: 250, y: 5 },
-  },
-  { id: "2", data: { label: "Node 2" }, position: { x: 100, y: 100 } },
-  { id: "3", data: { label: "Node 3" }, position: { x: 400, y: 100 } },
-  {
-    id: "4",
-    // type: "custom",
-    data: { label: "Custom Node" },
-    position: { x: 400, y: 200 },
-  },
-];
-
-const initialEdges: Edge[] = [
-  { id: "e1-2", source: "1", target: "2", animated: true },
-  { id: "e1-3", source: "1", target: "3" },
-];
-
-// const nodeTypes = {
-//   custom: CustomNode
-// };
+import useNodesFromUrl from "./use-nodes-from-url";
 
 const ViewFlow = () => {
-  const [nodes, , onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const [nodes, onNodesChange] = useNodesFromUrl();
+  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const onConnect = useCallback(
     (params: Edge | Connection) => setEdges((els) => addEdge(params, els)),
     [setEdges]
@@ -54,10 +27,10 @@ const ViewFlow = () => {
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
-        //   nodeTypes={nodeTypes}
         fitView
       >
         <Background />
+        <Controls />
       </ReactFlow>
     </StyledViewFlow>
   );

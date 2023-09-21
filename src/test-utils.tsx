@@ -1,7 +1,7 @@
+/* eslint-disable react-refresh/only-export-components */
 import { RenderHookResult, render, renderHook } from "@testing-library/react";
 import { ThemeProvider } from "styled-components";
 import theme from "./app/theme";
-import { MemoryRouter } from "react-router-dom";
 
 interface ProvidersForTestsProps {
   children: JSX.Element;

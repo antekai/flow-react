@@ -1,0 +1,9 @@
+export { default as ExcelIcon } from "./excel.svg?react";
+export { default as ChartIcon } from "./chart-pie-alt.svg?react";
+export { default as HistogramIcon } from "./histogram-chart.svg?react";
+export { default as FilterIcon } from "./filter.svg?react";
+export { default as DateRangeIcon } from "./date-range.svg?react";
+export { default as DataCenterIcon } from "./data-center-data-warehouse.svg?react";
+export { default as CropIcon } from "./crop-simple.svg?react";
+export { default as StatisticsIcon } from "./statistics.svg?react";
+export { default as SumIcon } from "./sum.svg?react";
