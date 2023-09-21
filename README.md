@@ -1,5 +1,7 @@
 # Flow react
 
+[![Production](https://github.com/antekai/flow-react/actions/workflows/production.yml/badge.svg)](https://github.com/antekai/flow-react/actions/workflows/production.yml)
+
 View and manage workflows
 
 ![Image](/flow-preview.jpg "preview")
@@ -32,8 +34,10 @@ Features:
 
 Technologies:
 
-- Development server/tooling: vite
-- Styles: styled-components
+- Development server/tooling: [vite](https://vitejs.dev/guide/)
+- Workflows: [react-flow](https://reactflow.dev/)
+- Navigation: [react-router](https://reactrouter.com/en/main),
+- Styling: [styled-components](https://styled-components.com/)
 - Testing: eslint, vitest, @testing-library/react
 - CI: github actions
 - Hosting: S3 bucket (Amazon Web Services)
